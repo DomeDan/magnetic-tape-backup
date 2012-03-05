@@ -17,5 +17,7 @@ This a script I wrote to backup files to magnetic tape (DAT) from a network atta
   * tar xzvf /dev/nst0
   * The tar command will extract all the files in backup number 14 to the current directory
 
+links
+==========
 * A forum-post I got inspiration from: http://www.unix.com/unix-dummies-questions-answers/9595-multiple-backups-one-tape.html
 * Good info about bash-scripting: http://linuxconfig.org/Bash_scripting_Tutorial
