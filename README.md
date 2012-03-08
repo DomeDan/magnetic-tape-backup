@@ -4,7 +4,7 @@ This a script I wrote to backup files to magnetic tape from a network attached s
 # HOWTO first run:
   * create a file containing the backup number, "echo 0 > backup.count" (or any other name as long as you change the variable)
   * find what you want to backup, if its on a network-drive edit /etc/fstab so it will be mounted by this script
-    edit the variables $BACKUPDIRSX to point at the directories you want to backup
+    edit the variables $BACKUPDIRS to point at the directories you want to backup
   * do a test-run with the -t flag
   * do a real-run with the -r flag
 
@@ -19,9 +19,7 @@ This a script I wrote to backup files to magnetic tape from a network attached s
 	doing backup number 4
 	rewinding /dev/st0
 	forward space count files to 4
-	backing up /mnt/nas/BACKUP/somehost/backup/daily/mysql/mysql_2012-03-08_02h10m.Thursday.sql.gz 
-	/mnt/nas/BACKUP/somehost/something_backup/backup_4.tar.gz /mnt/nas/BACKUP/Evert/documents/ 
-	/mnt/nas/BACKUP/Evert/pictures/ /mnt/nas/BACKUP/Börje/ /mnt/nas/BACKUP/DomeDan/www
+	backing up /mnt/nas/BACKUP/somehost/backup/daily/mysql/mysql_2012-03-08_02h10m.Thursday.sql.gz /mnt/nas/BACKUP/somehost/something_backup/backup_4.tar.gz /mnt/nas/BACKUP/Evert/documents/ /mnt/nas/BACKUP/Evert/pictures/ /mnt/nas/BACKUP/Börje/ /mnt/nas/BACKUP/DomeDan/www
 	tar: Tar bort inledande "/" från namnen i arkivet
 	took 241.068256914 seconds to write 682.08 Mb, speed: 2.82 Mb/s
 	writing End Of File at the end of backup
@@ -34,6 +32,7 @@ This a script I wrote to backup files to magnetic tape from a network attached s
 	writing 5 to ./backup.count
 	eject tape? (y/n) y
 	ejecting, wait...
+
 
 
 * links
