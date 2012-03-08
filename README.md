@@ -38,6 +38,6 @@ This a script I wrote to backup files to magnetic tape from a network attached s
 
 
 # links
-	* A forum-post I got inspiration from: http://www.unix.com/unix-dummies-questions-answers/9595-multiple-backups-one-tape.html
-	* more inspiration http://www.cyberciti.biz/faq/linux-tape-backup-with-mt-and-tar-command-howto/
-	* Good info about bash-scripting: http://linuxconfig.org/Bash_scripting_Tutorial
+  * A forum-post I got inspiration from: http://www.unix.com/unix-dummies-questions-answers/9595-multiple-backups-one-tape.html
+  * more inspiration http://www.cyberciti.biz/faq/linux-tape-backup-with-mt-and-tar-command-howto/
+  * Good info about bash-scripting: http://linuxconfig.org/Bash_scripting_Tutorial
