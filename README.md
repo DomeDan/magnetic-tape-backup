@@ -3,7 +3,7 @@ This a script I wrote to backup files to magnetic tape from a network attached s
 
 # HOWTO first run:
   * create a file containing the backup number, "echo 0 > backup.count" (or any other name as long as you change the variable)
-  * find what you want to backup, if its on a network-drive edit /etc/fstab so it will be mounted by this script
+  * find what you want to backup, if its on a network-drive edit /etc/fstab so it will be mounted by this script if you set MOUNT_ALL="y"
     edit the variables $BACKUPDIRS to point at the directories you want to backup
   * do a test-run with the -t flag
   * do a real-run with the -r flag
@@ -15,26 +15,35 @@ This a script I wrote to backup files to magnetic tape from a network attached s
   * The tar command will extract all the files in backup number 14 to the current directory
 
 # Example
-	root@host:~# ./backup_sql_spcs_database.sh -r
-	doing backup number 4
-	rewinding /dev/st0
-	forward space count files to 4
-	backing up /mnt/nas/BACKUP/somehost/backup/daily/mydatabase/mydatabase_2012-03-08_02h10m.Thursday.sql.gz
-	/mnt/nas/BACKUP/somehost/backup/daily/testdb/testdb_2012-03-08_02h10m.Thursday.sql.gz
-	/mnt/nas/BACKUP/somehost/backup/daily/mysql/mysql_2012-03-08_02h10m.Thursday.sql.gz /mnt/nas/BACKUP/somehost/something_backup/backup_4.tar.gz /mnt/nas/BACKUP/Evert/documents/ /mnt/nas/BACKUP/Evert/pictures/ /mnt/nas/BACKUP/Börje/ /mnt/nas/BACKUP/DomeDan/www
-	tar: Tar bort inledande "/" från namnen i arkivet
-	took 241.068256914 seconds to write 682.08 Mb, speed: 2.82 Mb/s
-	writing End Of File at the end of backup
-	verify backup
-	rewinding /dev/st0
-	forward space count files to 4
-	start comparing backup with tape
-	backup OK
-	backup 4 finnish
-	writing 5 to ./backup.count
-	eject tape? (y/n) y
-	ejecting, wait...
+root@host:~# ./magnetic-tape-backup-bba.sh -r
+* Calculating size of all data to backup
+## Real-mode ##
+* Doing backup number 5
+* Rewinding /dev/st0
+* Forward space count files to 5
 
+Size of backup: 403.39 Mb with a teoretical speed of 3.2 Mb/s 
+the backup plus backup verification will take 4.20 min 
+
+Calculated teoretical finnish-time: 15:23:08
+
+2012-12-07 15:19:23: Backing up /root
+* Writing data to tape
+2012-12-07 15:22:37: Backup took 3.23 min, size: 403.39 Mb, speed: 2.07 Mb/s (acctual write speed was 2.38 Mb/s)
+
+New calculated finnish-time based on the acctual write time: 15:25:51
+
+* Rewinding /dev/st0
+* Forward space count files to 5
+2012-12-07 15:23:01: Start comparing backup with tape using "tar -d"
+* Verifying backup
+* Backup OK
+2012-12-07 15:25:38: Backup 5 finnish
+* Writing 6 to ./backuptest.count
+* Rewinding /dev/st0
+Eject tape? (y/n) y
+* Ejecting, wait...
+root@host:~#
 
 
 # links
